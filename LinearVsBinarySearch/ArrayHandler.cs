@@ -8,12 +8,19 @@ namespace LinearVsBinarySearch
 {
     class ArrayHandler
     {
-        private int[] shuffledArray;
+        private int[] ShuffledArray;
+        private int ArraySize;
+
+        public ArrayHandler(int arraySize)
+        {
+            ArraySize = arraySize;
+        }
+
         public int[] GenerateSortedArray()
         {
-            int[] sortedArray = new int[50];
+            int[] sortedArray = new int[ArraySize];
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < ArraySize; i++)
             {
                 sortedArray[i] = i;
             }
@@ -23,11 +30,11 @@ namespace LinearVsBinarySearch
 
         public int[] ShuffleArray(int[] sortedArray)
         {
-            shuffledArray = sortedArray;
+            ShuffledArray = sortedArray;
             Random r = new Random();
-            Shuffle(shuffledArray, shuffledArray.Length, r);
+            Shuffle(ShuffledArray, ShuffledArray.Length, r);
             
-            return shuffledArray;
+            return ShuffledArray;
         }
 
         private void Shuffle(int[] sortedArray, int length, Random r)
